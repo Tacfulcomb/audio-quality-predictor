@@ -17,19 +17,15 @@ This repository contains the code and implementation for a 4-tier Hierarchical M
 
 ## ⚙️ Installation & Setup
 
-**1. Clone the repository:**
 ```bash
 git clone [https://github.com/your-username/audio-quality-predictor.git](https://github.com/your-username/audio-quality-predictor.git)
 cd audio-quality-predictor
 Create a virtual environment (Recommended):
-    Bash
 
     python -m venv venv
     source venv/bin/activate  # On Windows use: venv\Scripts\activate
 
     Install required dependencies:
-    Bash
-
     pip install -r requirements.txt
 
 🚀 Running the Live Demo
@@ -49,13 +45,11 @@ Note on Data Leakage: All training scripts utilize an internal 80/20 train_test_
 
 Feature Extraction:
 Run the pipeline to extract perceptual features and statistical functionals from the raw audio:
-Bash
 
 python pipeline.py
 
 Model Training & Evaluation:
 Execute the analysis scripts to train the regressors, calculate R-squared metrics, and generate Feature Importance graphs:
-Bash
 
 python eval_level1.py
 python level2_analysis.py
