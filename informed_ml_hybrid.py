@@ -105,7 +105,7 @@ def visualize_model_logic(model, feature_names):
     plt.savefig('hybrid_logic_importance.png', dpi=300)
     plt.show()
 
-# Define your feature names based on the np.hstack order
+# Define feature names based on the np.hstack order
 feature_names = [
     'MFCC_0', 'MFCC_1', 'MFCC_2', 'MFCC_3', 'MFCC_4', 
     'MFCC_5', 'MFCC_6', 'MFCC_7', 'MFCC_8', 'MFCC_9', 
@@ -142,3 +142,14 @@ visualize_model_logic(model, feature_names)
 print(f"\n--- Elite Informed ML Results ---")
 print(f"R-squared Score: {r2_score(y_test, preds):.4f}")
 print(f"Pearson R: {np.corrcoef(y_test, preds)[0, 1]:.4f}")
+
+import joblib
+
+level_3_bundle = {
+    'model': model,
+    'system_map': hybrid.system_map,
+    'feature_names': feature_names
+}
+
+joblib.dump(level_3_bundle, 'informed_hybrid_lvl3.joblib')
+print("\n--- Level 3 Bundle saved successfully as 'informed_hybrid_lvl3.joblib' ---")

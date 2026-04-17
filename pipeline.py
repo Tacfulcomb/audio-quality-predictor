@@ -35,8 +35,8 @@ class AudioQualityPipeline:
             # Spectral Centroid: Indicates the 'brightness' of the audio
             centroid = librosa.feature.spectral_centroid(y=y, sr=sr)
             centroid_mean = np.mean(centroid)
-            
-            # --- 3. Temporal Features (Capturing 'Dynamics') ---
+
+            # --- 3. Measures High-Frequency Hiss/Unvoiced sounds. ---
             # Zero Crossing Rate: Detects high-frequency noise/hiss
             zcr = librosa.feature.zero_crossing_rate(y)
             zcr_mean = np.mean(zcr)
